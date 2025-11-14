@@ -1,0 +1,130 @@
+ nav,section, footer, aside {
+  padding: 20px;
+  text-align: center;
+}
+nav { background: #6a9fd4; } 
+section { background: #EF7722; min-height: 300px; }
+aside { background: #98592b; min-height: 300px; }
+footer { background: #2D3436; color: black; }
+
+ header {
+  text-align: center;
+  border-radius: 0px 0px 20px 20px;
+  animation: slideDown 1s ease;
+}
+@keyframes slideDown{
+    from{transform: translateY(-100%);opacity: 0;}
+    to{transform: translateY(0);opacity: 1;}
+}
+header h1 {
+  font-size: 2.5em;
+} 
+html{
+  scroll-behavior: smooth;
+}
+
+nav,section,footer{font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+html{
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+     }   
+     body{
+        background-color: #F8F9FA;
+     }
+    .menu-ngoding{
+        background-color: #F39F9F;
+          border-radius: 0px 0px 20px 20px;
+          padding: 20px; 
+    } 
+    .menu-ngoding ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    .menu-ngoding> ul> li{
+         float: left; 
+    }
+    .menu-ngoding li a{
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    .menu-ngoding li a:hover{
+        background-color: #9d9df0;
+    }
+    li.dropdown{
+       list-style-type: none;
+        margin: 0;
+        padding: 0; 
+        overflow: hidden;
+    }
+    .dropdown:hover .isi-dropdown{
+        display: block;
+    }
+    .isi-dropdown a:hover{
+        color: #fff !important;
+    }
+    .isi-dropdown{
+        position:absolute ;
+        display:none ;
+        box-shadow:0px 8px 16px 0px ;
+        z-index:1 ;
+        background-color: azure;
+    }
+    .isi-dropdown a {
+        color: #3c3c3c !important;
+    }
+    .isi-dropdown a:hover {
+        color: #232323 !important;
+        background-color:#f3f3f3 !important;
+    }
+.container {
+  display: grid;
+  grid-template-columns: 3fr 3fr ;
+  gap: 20px;
+  padding: 30px;
+}
+.arfa{
+      border-radius: 20px 20px 20px 20px ;
+      padding: 20px;
+      gap: 20px;
+
+}
+.hayya ul{
+      list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+
+}
+.new{
+      position: relative;
+      display: inline-block;
+
+}
+    table{
+      width: 70%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+    th {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+      text-transform: uppercase;
+    }
+    td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      background-color: white;
+      text-align: center;
+    }
+    .haha{
+      text-align: left;
+    }

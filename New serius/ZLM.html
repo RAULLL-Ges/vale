@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Time Capsule - Sejarah Teknologi Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Light mode colors */
+            --vintage-cream: #F5E6D3;
+            --vintage-brown: #8B6F47;
+            --tech-blue: #00D4FF;
+            --tech-purple: #8B5CF6;
+            --vintage-red: #DC143C;
+            --dark-brown: #3E2723;
+            --light-gray: #F8F9FA;
+            --text-primary: #3E2723;
+            --text-secondary: #555;
+            --bg-primary: #F5E6D3;
+            --bg-secondary: #FFFFFF;
+            --card-shadow: rgba(0,0,0,0.1);
+            
+            /* Dark mode colors */
+            --dark-vintage-cream: #1a1a1a;
+            --dark-vintage-brown: #D4A574;
+            --dark-tech-blue: #00D4FF;
+            --dark-tech-purple: #B794F4;
+            --dark-vintage-red: #FF6B6B;
+            --dark-dark-brown: #F5E6D3;
+            --dark-light-gray: #2D2D2D;
+            --dark-text-primary: #F5E6D3;
+            --dark-text-secondary: #B8B8B8;
+            --dark-bg-primary: #0F0F0F;
+            --dark-bg-secondary: #1A1A1A;
+            --dark-card-shadow: rgba(0,0,0,0.5);
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background-color: var(--bg-primary);
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(139, 111, 71, 0.03) 10px,
+                    rgba(139, 111, 71, 0.03) 20px
+                ),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%238B6F47" opacity="0.1"/></svg>');
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Header Vintage-Tech */
+        header {
+            background: linear-gradient(135deg, var(--dark-brown) 0%, #5D4037 100%);
+            color: var(--vintage-cream);
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--tech-blue) 0%, transparent 70%);
+            opacity: 0.1;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(1.1); opacity: 0.2; }
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--tech-blue), var(--tech-purple));
+        }
+
+        .subtitle {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.5rem;
+            color: var(--tech-blue);
+            letter-spacing: 2px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(62, 39, 35, 0.95);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--vintage-cream);
+            text-decoration: none;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--tech-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .section-title::before,
+        .section-title::after {
+            content: '⚡';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: var(--tech-blue);
+        }
+
+        .section-title::before { left: -40px; }
+        .section-title::after { right: -40px; }
+
+        /* Timeline Cards */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--vintage-brown) 0%, var(--tech-blue) 100%);
+            transform: translateX(-50%);
+            transition: background 0.3s ease;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .timeline-item:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .timeline-item:nth-child(odd) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timeline-content {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px var(--card-shadow);
+            position: relative;
+            width: calc(50% - 40px);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            margin: -2px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--tech-blue), var(--tech-purple));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .timeline-content:hover::before {
+            opacity: 0.3;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            background: var(--tech-blue);
+            border: 4px solid white;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 0 4px var(--tech-blue), 0 0 0 8px rgba(0, 212, 255, 0.2);
+            animation: glow 2s ease-in-out infinite;
+            transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 0 4px var(--tech-blue), 0 0 0 8px rgba(0, 212, 255, 0.2); }
+            50% { box-shadow: 0 0 0 4px var(--tech-blue), 0 0 0 12px rgba(0, 212, 255, 0.4); }
+        }
+
+        .year {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            color: var(--vintage-red);
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .event-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .event-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        /* Interactive Features Section */
+        .features-section {
+            background: var(--bg-secondary);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--card-shadow);
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+        }
+
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(0, 212, 255, 0.03) 10px,
+                rgba(0, 212, 255, 0.03) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(245, 230, 211, 0.5), rgba(255, 255, 255, 0.5));
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(139, 111, 71, 0.2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(139, 92, 246, 0.1));
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--tech-blue);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: var(--tech-purple);
+        }
+
+        .feature-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        /* Quiz Section */
+        .quiz-section {
+            background: linear-gradient(135deg, var(--dark-brown), #5D4037);
+            color: var(--vintage-cream);
+            padding: 3rem;
+            border-radius: 15px;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .quiz-section::after {
+            content: '📡';
+            position: absolute;
+            right: 2rem;
+            top: 2rem;
+            font-size: 4rem;
+            opacity: 0.2;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .question {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .option {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            color: var(--vintage-cream);
+        }
+
+        .option:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: var(--tech-blue);
+            transform: translateX(10px);
+        }
+
+        .option.correct {
+            background: rgba(76, 175, 80, 0.3);
+            border-color: #4CAF50;
+        }
+
+        .option.incorrect {
+            background: rgba(244, 67, 54, 0.3);
+            border-color: #F44336;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-brown);
+            color: var(--vintage-cream);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: var(--vintage-cream);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--tech-blue);
+            transform: translateY(-3px);
+        }
+
+        /* Dark Mode Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--tech-blue), var(--tech-purple));
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+        }
+
+        .theme-toggle i {
+            font-size: 24px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover i {
+            transform: rotate(180deg);
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: var(--dark-bg-primary);
+            color: var(--dark-text-primary);
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(212, 165, 116, 0.03) 10px,
+                    rgba(212, 165, 116, 0.03) 20px
+                ),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23D4A574" opacity="0.1"/></svg>');
+        }
+
+        body.dark-mode header {
+            background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 100%);
+            color: var(--dark-text-primary);
+        }
+
+        body.dark-mode .subtitle {
+            color: var(--dark-tech-blue);
+        }
+
+        body.dark-mode nav {
+            background: rgba(15, 15, 15, 0.95);
+        }
+
+        body.dark-mode .nav-links a {
+            color: var(--dark-text-primary);
+        }
+
+        body.dark-mode .nav-links a::after {
+            background: var(--dark-tech-blue);
+        }
+
+        body.dark-mode .section-title {
+            color: var(--dark-text-primary);
+        }
+
+        body.dark-mode .timeline::before {
+            background: linear-gradient(180deg, var(--dark-vintage-brown) 0%, var(--dark-tech-blue) 100%);
+        }
+
+        body.dark-mode .timeline-content {
+            background: var(--dark-bg-secondary);
+            color: var(--dark-text-primary);
+        }
+
+        body.dark-mode .timeline-dot {
+            background: var(--dark-tech-blue);
+            border-color: var(--dark-bg-primary);
+            box-shadow: 0 0 0 4px var(--dark-tech-blue), 0 0 0 8px rgba(0, 212, 255, 0.3);
+        }
+
+        body.dark-mode .year {
+            color: var(--dark-vintage-red);
+        }
+
+        body.dark-mode .event-title {
+            color: var(--dark-text-primary);
+        }
+
+        body.dark-mode .event-description {
+            color: var(--dark-text-secondary);
+        }
+
+        body.dark-mode .features-section {
+            background: var(--dark-bg-secondary);
+        }
+
+        body.dark-mode .feature-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.5), rgba(15, 15, 15, 0.5));
+            border: 1px solid rgba(212, 165, 116, 0.2);
+        }
+
+        body.dark-mode .feature-card:hover {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(183, 148, 244, 0.1));
+        }
+
+        body.dark-mode .feature-title {
+            color: var(--dark-text-primary);
+        }
+
+        body.dark-mode .quiz-section {
+            background: linear-gradient(135deg, #0F0F0F, #1A1A1A);
+            color: var(--dark-text-primary);
+        }
+
+        body.dark-mode .option {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--dark-text-primary);
+        }
+
+        body.dark-mode .option:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: var(--dark-tech-blue);
+        }
+
+        body.dark-mode .option.correct {
+            background: rgba(76, 175, 80, 0.2);
+            border-color: #4CAF50;
+        }
+
+        body.dark-mode .option.incorrect {
+            background: rgba(244, 67, 54, 0.2);
+            border-color: #F44336;
+        }
+
+        body.dark-mode footer {
+            background: #0F0F0F;
+            color: var(--dark-text-primary);
+        }
+
+        body.dark-mode .social-links a {
+            color: var(--dark-text-primary);
+        }
+
+        body.dark-mode .social-links a:hover {
+            color: var(--dark-tech-blue);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .theme-toggle {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .theme-toggle i {
+                font-size: 20px;
+            }
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-icon {
+            font-size: 4rem;
+            color: var(--tech-blue);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <i class="fas fa-cog loader-icon"></i>
+            <p style="margin-top: 1rem; font-family: 'Bebas Neue', cursive; font-size: 1.5rem;">LOADING...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <h1>Digital Time Capsule</h1>
+            <p class="subtitle">Jelajahi Sejarah Teknologi Digital</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#features">Fitur</a></li>
+                <li><a href="#quiz">Kuis</a></li>
+                <li><a href="#about">Tentang</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Timeline Section -->
+        <section id="timeline" class="timeline-section">
+            <h2 class="section-title">Perjalanan Teknologi Digital</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="year">1940s</div>
+                        <h3 class="event-title">Komputer Pertama</h3>
+                        <p class="event-description">ENIAC (Electronic Numerical Integrator and Computer) menjadi komputer elektronik digital pertama yang dapat diprogram, menandai awal era komputasi modern.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="year">1969</div>
+                        <h3 class="event-title">Lahirnya Internet</h3>
+                        <p class="event-description">ARPANET, jaringan komputer pertama yang menghubungkan universitas-universitas di Amerika, menjadi cikal bakal internet yang kita kenal sekarang.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="year">1975</div>
+                        <h3 class="event-title">Personal Computer</h3>
+                        <p class="event-description">Altair 8800 menjadi komputer pribadi pertama yang tersedia untuk umum, memulai revolusi komputer di rumah.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="year">1989</div>
+                        <h3 class="event-title">World Wide Web</h3>
+                        <p class="event-description">Tim Berners-Lee menciptakan World Wide Web di CERN, mengubah cara kita berbagi informasi dan berkomunikasi secara global.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="year">2007</div>
+                        <h3 class="event-title">Era Smartphone</h3>
+                        <p class="event-description">Peluncuran iPhone pertama oleh Steve Jobs memulai era smartphone, mengubah cara kita mengakses informasi dan berinteraksi dengan teknologi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <h2 class="section-title">Fitur Pembelajaran Interaktif</h2>
+            <div class="features-grid">
+                <div class="feature-card" onclick="showFeatureDetail('visual')">
+                    <i class="fas fa-palette feature-icon"></i>
+                    <h3 class="feature-title">Visual Learning</h3>
+                    <p>Pembelajaran melalui visualisasi menarik dan infografis interaktif</p>
+                </div>
+                <div class="feature-card" onclick="showFeatureDetail('timeline')">
+                    <i class="fas fa-history feature-icon"></i>
+                    <h3 class="feature-title">Timeline Dinamis</h3>
+                    <p>Jelajahi perjalanan teknologi melalui timeline yang interaktif</p>
+                </div>
+                <div class="feature-card" onclick="showFeatureDetail('quiz')">
+                    <i class="fas fa-brain feature-icon"></i>
+                    <h3 class="feature-title">Kuis Menantang</h3>
+                    <p>Uji pengetahuan Anda dengan kuis interaktif dan mendapatkan feedback</p>
+                </div>
+                <div class="feature-card" onclick="showFeatureDetail('archive')">
+                    <i class="fas fa-archive feature-icon"></i>
+                    <h3 class="feature-title">Digital Archive</h3>
+                    <p>Arsip digital lengkap dengan dokumen dan media historis</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="quiz-section">
+            <h2 class="section-title">Kuis Pengetahuan</h2>
+            <div class="quiz-container">
+                <div class="question" id="question">Siapa yang menciptakan World Wide Web?</div>
+                <div class="options">
+                    <div class="option" onclick="checkAnswer(this, false)">Bill Gates</div>
+                    <div class="option" onclick="checkAnswer(this, true)">Tim Berners-Lee</div>
+                    <div class="option" onclick="checkAnswer(this, false)">Steve Jobs</div>
+                    <div class="option" onclick="checkAnswer(this, false)">Mark Zuckerberg</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 Digital Time Capsule. Menggabungkan masa lalu dengan masa depan.</p>
+        </div>
+    </footer>
+
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+
+    <script>
+        // Hide loader when page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Feature detail function
+        function showFeatureDetail(feature) {
+            const details = {
+                visual: "Visual Learning menggunakan grafis modern dengan sentuhan vintage untuk membuat pembelajaran lebih menarik dan mudah diingat.",
+                timeline: "Timeline Dinamis menampilkan perjalanan teknologi dengan animasi yang halus dan desain yang menggabungkan elemen retro dan futuristik.",
+                quiz: "Kuis Menantang dirancang dengan sistem scoring yang interaktif dan feedback instan untuk meningkatkan pengalaman belajar.",
+                archive: "Digital Archive menyimpan dokumen historis dengan UI yang mengingatkan pada katalog perpustakaan klasik namun dengan teknologi modern."
+            };
+            
+            // Create modal-like notification
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: ${document.body.classList.contains('dark-mode') ? '#1A1A1A' : 'white'};
+                padding: 2rem;
+                border-radius: 10px;
+                box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+                max-width: 400px;
+                z-index: 1000;
+                border: 2px solid var(--tech-blue);
+                animation: slideIn 0.3s ease;
+                color: ${document.body.classList.contains('dark-mode') ? '#F5E6D3' : '#3E2723'};
+            `;
+            
+            notification.innerHTML = `
+                <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem; color: ${document.body.classList.contains('dark-mode') ? '#F5E6D3' : '#3E2723'};">
+                    ${feature.charAt(0).toUpperCase() + feature.slice(1)}
+                </h3>
+                <p style="line-height: 1.6; color: ${document.body.classList.contains('dark-mode') ? '#B8B8B8' : '#555'};">${details[feature]}</p>
+                <button onclick="this.parentElement.remove()" style="
+                    margin-top: 1rem;
+                    padding: 0.5rem 1rem;
+                    background: var(--tech-blue);
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-family: 'Bebas Neue', cursive;
+                    letter-spacing: 1px;
+                ">Tutup</button>
+            `;
+            
+            document.body.appendChild(notification);
+        }
+
+        // Quiz function
+        let quizAnswered = false;
+        function checkAnswer(element, isCorrect) {
+            if (quizAnswered) return;
+            
+            quizAnswered = true;
+            const options = document.querySelectorAll('.option');
+            
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+            });
+            
+            if (isCorrect) {
+                element.classList.add('correct');
+                showNotification('Jawaban Benar! 🎉', 'success');
+            } else {
+                element.classList.add('incorrect');
+                showNotification('Jawaban Salah. Coba lagi! 💡', 'error');
+                
+                // Show correct answer
+                options.forEach(option => {
+                    if (option.onclick.toString().includes('true')) {
+                        option.classList.add('correct');
+                    }
+                });
+            }
+            
+            // Reset quiz after 3 seconds
+            setTimeout(() => {
+                quizAnswered = false;
+                options.forEach(option => {
+                    option.classList.remove('correct', 'incorrect');
+                    option.style.pointerEvents = 'auto';
+                });
+            }, 3000);
+        }
+
+        // Notification function
+        function showNotification(message, type) {
+            const notification = document.createElement('div');
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 1rem 2rem;
+                border-radius: 5px;
+                color: white;
+                font-family: 'Space Mono', monospace;
+                z-index: 1000;
+                animation: slideInRight 0.3s ease;
+                background: ${type === 'success' ? '#4CAF50' : '#F44336'};
+                box-shadow: 0 4px 12px ${isDarkMode ? 'rgba(0,0,0,0.5)' : 'rgba(0,0,0,0.2)'};
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
+            }, 2000);
+        }
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+                
+                // Show notification
+                showNotification('Mode Dark Aktif! 🌙', 'success');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+                
+                // Show notification
+                showNotification('Mode Light Aktif! ☀️', 'success');
+            }
+        });
+
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+                to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            }
+            
+            @keyframes slideInRight {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            
+            @keyframes slideOutRight {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('header');
+            parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+
+        // Add intersection observer for timeline animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
